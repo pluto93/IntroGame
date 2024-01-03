@@ -59,7 +59,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\StickyPlatform.cs" />
-    <Compile Include="Assets\WhiteCity\Offer\Asset_Store_Offers.cs" />
     <Compile Include="Assets\Scripts\LevelMenu.cs" />
     <Compile Include="Assets\Scripts\PlayerLife.cs" />
     <Compile Include="Assets\Scripts\ItemCollector.cs" />
