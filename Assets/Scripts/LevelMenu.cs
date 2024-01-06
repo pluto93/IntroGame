@@ -10,6 +10,11 @@ public class LevelMenu : MonoBehaviour
 
     private void Awake()
     {
+        UpdateLevelButtons();
+    }
+
+    /*private void Awake()
+    {
         int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
         Debug.Log("Unlocked Levels: " + unlockedLevel);
         
@@ -22,10 +27,31 @@ public class LevelMenu : MonoBehaviour
         {
             buttons[i].interactable = true;
         }
-    }
+    }*/
+
     public void OpenLevel(int levelId)
     {
         string levelName = "Level " + levelId;
         SceneManager.LoadScene(levelName);
+    }
+
+    // This method updates the interactable state of each level button
+    private void UpdateLevelButtons()
+    {
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
+        Debug.Log("Unlocked Levels: " + unlockedLevel);
+
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].interactable = i < unlockedLevel;
+        }
+    }
+
+    // Call this method from a reset button to lock all levels except the first one
+    public void ResetLevels()
+    {
+        PlayerPrefs.SetInt("UnlockedLevel", 1);
+        PlayerPrefs.Save();
+        UpdateLevelButtons();
     }
 }
