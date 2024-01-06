@@ -2,19 +2,40 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Finish : MonoBehaviour
 {
+    public int requiredCoins = 5; // Set the number of coins required to finish the level
+    private int collectedCoins = 0;
+    public Text collectMoreCoinsText; // Reference to the UI text element
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.name == "Player")
         {
-            UnlockNewLevel();
-            Debug.Log("Player entered the finish zone.");
-            Debug.Log("Current Level Index: " + SceneManager.GetActiveScene().buildIndex);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            if (collectedCoins >= requiredCoins)
+            {
+                UnlockNewLevel();
+                Debug.Log("Player entered the finish zone.");
+                Debug.Log("Current Level Index: " + SceneManager.GetActiveScene().buildIndex);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+            else
+            {
+                // Display a text message if the player fails to collect enough coins
+                if (collectMoreCoinsText != null)
+                {
+                    collectMoreCoinsText.text = "Collect more coins to finish the level!";
+                }
+            }
+    
         }
 
+    }
+
+    public void CollectCoin()
+    {
+        collectedCoins++;
     }
 
     /*void UnlockNewLevel()
@@ -62,6 +83,8 @@ public class Finish : MonoBehaviour
     // Log the new values.
     Debug.Log("New Reached Index: " + PlayerPrefs.GetInt("ReachedIndex"));
     Debug.Log("New Unlocked Level: " + PlayerPrefs.GetInt("UnlockedLevel"));
+
+    collectedCoins = 0;
 }
 
 }
