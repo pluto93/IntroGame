@@ -14,7 +14,7 @@ public class PlayerLife : MonoBehaviour
         {
             GetComponent<MeshRenderer>().enabled = false;
             GetComponent<Rigidbody>().isKinematic = true;
-            GetComponent<PlayerMovement>().enabled = false;
+            //GetComponent<PlayerMovement>().enabled = false;
             Die();
         }
     }
