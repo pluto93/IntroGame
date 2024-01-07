@@ -23,3 +23,13 @@ Arrow keys or WASD - To move forward, left, right and backwards.
 SPACE while holding any of the forward, left, right or backwards buttons – To jump.
 
 Pass through all the levels by moving around and jumping from rooftops, while dodging the obstacles set by Energy Corp. The Corp increases the obstacles as you keep progressing onto next levels. Don't forget to collect the Energy Coins on your way, and watch out for moving platforms! Returning the city to it's former glory is in your hands.
+
+### Assets References:
+
+2D Casual UI HD - GUI Sprites - https://assetstore.unity.com/packages/2d/gui/icons/2d-casual-ui-hd-82080
+
+Free Pixel Font Thaleah - Font - https://assetstore.unity.com/packages/2d/fonts/free-pixel-font-thaleah-140059
+
+FREE Casual Game SFX Pack - SFX Sounds - https://assetstore.unity.com/packages/audio/sound-fx/free-casual-game-sfx-pack-54116
+
+Dark Future Music - Background Music - https://assetstore.unity.com/packages/audio/music/electronic/dark-future-music-3777
