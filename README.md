@@ -22,4 +22,4 @@ Collect a minimum of 5 Energy Coins to pass to the next level.
 Arrow keys or WASD - To move forward, left, right and backwards.
 SPACE while holding any of the forward, left, right or backwards buttons – To jump.
 
-Pass through all the levels by moving around and jumping from rooftops, while dodging the obstacles set by Energy Corp. Don't forget to collect the Energy Coins on your way, and watch out for moving platforms! Returning the city to it's former glory is in your hands.
+Pass through all the levels by moving around and jumping from rooftops, while dodging the obstacles set by Energy Corp. The Corp increases the obstacles as you keep progressing onto next levels. Don't forget to collect the Energy Coins on your way, and watch out for moving platforms! Returning the city to it's former glory is in your hands.
