@@ -1,8 +1,25 @@
-# Platformer Game - Blitz City Dash
-This is a 3D platformer game set in a dystopian city that was attacked and invaded by enemies. The only item that can save the city from these invaders is kept locked up in a tower at the heart of the city. The player needs to pass across platforms while collecting coins and dodging the enemies and obstacles of various intensity to stay alive till they get to tower.
+# Platformer Game - City Dash
 
-# How to play
-Arrow keys or WASD - moving forward, left, right and backwards.
-SPACE – jump.
+### Background Story:
 
-Get to the tower by moving around and jumping from platform to platform, while dodging the enemies and obstacles. Don't forget to collect the coins on your way, and watch out for moving platforms! Returning the city to it's former glory is in your hands.
+In the bustling metropolitan, Energy Coins that power the city have been monopolized by the powerful "Energy Corp." To break their grip and share the energy with everyone, a group of agile runners, known as the "Dashers," take to the rooftops.
+
+### Main Character:
+
+The player controls Max, a quick and resourceful Dasher. Max believes in freedom and fairness for the city's energy distribution. With an unparalleled talent for acrobatics (and an almost concerning obsession with coins that glow), Max darts across the city's rooftops, proving that one person's ceiling is another's dance floor.
+
+### Objective:
+
+The player's goal is to navigate the rooftops, avoid obstacles set by Energy Corp, collect Energy Coins, and pass all the levels. Collecting the coins not only boosts the score in order to pass to the next level, but also helps to power up parts of the city.
+
+### Gameplay Mechanics:
+
+Jump from platform to platform.
+Avoid obstacles.
+Collect a minimum of 5 Energy Coins to pass to the next level.
+
+### How to play:
+Arrow keys or WASD - To move forward, left, right and backwards.
+SPACE while holding any of the forward, left, right or backwards buttons – To jump.
+
+Pass through all the levels by moving around and jumping from rooftops, while dodging the obstacles set by Energy Corp. The Corp increases the obstacles as you keep progressing onto next levels. Don't forget to collect the Energy Coins on your way, and watch out for moving platforms! Returning the city to it's former glory is in your hands.

@@ -13,22 +13,6 @@ public class LevelMenu : MonoBehaviour
         UpdateLevelButtons();
     }
 
-    /*private void Awake()
-    {
-        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
-        Debug.Log("Unlocked Levels: " + unlockedLevel);
-        
-        for (int i = 0; i < buttons.Length; i++)
-        {
-            buttons[i].interactable = false;
-        }
-
-        for (int i = 0; i < unlockedLevel; i++)
-        {
-            buttons[i].interactable = true;
-        }
-    }*/
-
     public void OpenLevel(int levelId)
     {
         string levelName = "Level " + levelId;
