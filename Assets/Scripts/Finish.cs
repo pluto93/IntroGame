@@ -6,10 +6,34 @@ using UnityEngine.UI;
 
 public class Finish : MonoBehaviour
 {
+
     public int requiredCoins = 5; // Set the number of coins required to finish the level
-    private int collectedCoins = 0;
+    //private int collectedCoins = 0;
     public Text collectMoreCoinsText; // Reference to the UI text element
+
     private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.name == "Player")
+        {
+            ItemCollector itemCollector = FindObjectOfType<ItemCollector>();
+            if (itemCollector != null && itemCollector.GetCoins() >= requiredCoins)
+            {
+                UnlockNewLevel();
+                Debug.Log("Player entered the finish zone.");
+                Debug.Log("Current Level Index: " + SceneManager.GetActiveScene().buildIndex);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+            else
+            {
+                // Display a text message if the player fails to collect enough coins
+                if (collectMoreCoinsText != null)
+                {
+                    collectMoreCoinsText.text = "Collect more coins to finish the level!";
+                }
+            }
+        }
+    }
+    /*private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.name == "Player")
         {
@@ -31,14 +55,14 @@ public class Finish : MonoBehaviour
     
         }
 
-    }
+    }*/
 
-    public void CollectCoin()
+    /*public void CollectCoin()
     {
         collectedCoins++;
     }
 
-    /*void UnlockNewLevel()
+    void UnlockNewLevel()
     {
         if (SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedIndex"))
         {
@@ -51,7 +75,7 @@ public class Finish : MonoBehaviour
         }
     }*/
 
-    void UnlockNewLevel()
+void UnlockNewLevel()
 {
     // Get the index of the current scene.
     int currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
@@ -77,6 +101,12 @@ public class Finish : MonoBehaviour
         Debug.Log("Unlocked Levels after update: " + (unlockedLevel + 1));
     }
 
+    ItemCollector itemCollector = FindObjectOfType<ItemCollector>();
+    if (itemCollector != null)
+    {
+        itemCollector.ResetCoins();
+    }
+
     // Save the changes to PlayerPrefs.
     PlayerPrefs.Save();
 
@@ -84,7 +114,7 @@ public class Finish : MonoBehaviour
     Debug.Log("New Reached Index: " + PlayerPrefs.GetInt("ReachedIndex"));
     Debug.Log("New Unlocked Level: " + PlayerPrefs.GetInt("UnlockedLevel"));
 
-    collectedCoins = 0;
+
 }
 
 }

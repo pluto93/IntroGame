@@ -132,10 +132,19 @@ public class MoveBehaviour : GenericBehaviour
 	// Remove vertical rigidbody velocity.
 	private void RemoveVerticalVelocity()
 	{
+		if (!behaviourManager.GetRigidBody.isKinematic)
+		{
+			Vector3 horizontalVelocity = behaviourManager.GetRigidBody.velocity;
+			horizontalVelocity.y = 0;
+			behaviourManager.GetRigidBody.velocity = horizontalVelocity;
+		}
+	}
+	/*private void RemoveVerticalVelocity()
+	{
 		Vector3 horizontalVelocity = behaviourManager.GetRigidBody.velocity;
 		horizontalVelocity.y = 0;
 		behaviourManager.GetRigidBody.velocity = horizontalVelocity;
-	}
+	}*/
 
 	// Rotate the player to match correct orientation, according to camera and key pressed.
 	Vector3 Rotating(float horizontal, float vertical)

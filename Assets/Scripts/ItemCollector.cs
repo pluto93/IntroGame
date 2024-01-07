@@ -10,6 +10,16 @@ public class ItemCollector : MonoBehaviour
     [SerializeField] Text coinsText;
     [SerializeField] AudioSource collectionSound;
 
+    public int GetCoins()
+    {
+        return coins;
+    }
+
+    public void ResetCoins()
+    {
+        coins = 0;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Coin"))
