@@ -33,3 +33,9 @@ Free Pixel Font Thaleah - Font - https://assetstore.unity.com/packages/2d/fonts/
 FREE Casual Game SFX Pack - SFX Sounds - https://assetstore.unity.com/packages/audio/sound-fx/free-casual-game-sfx-pack-54116
 
 Dark Future Music - Background Music - https://assetstore.unity.com/packages/audio/music/electronic/dark-future-music-3777
+
+3rd Person Controller - player - https://assetstore.unity.com/packages/templates/systems/3rd-person-controller-fly-mode-28647
+
+White City - Buildings - https://assetstore.unity.com/packages/3d/environments/urban/white-city-76766
+
+Fantasy Skybox FREE - skybox - https://assetstore.unity.com/packages/2d/textures-materials/sky/fantasy-skybox-free-18353
