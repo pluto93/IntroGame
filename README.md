@@ -2,7 +2,7 @@
 
 ### Background Story:
 
-In the bustling metropolitan, energy coins that power the city have been monopolized by the powerful "Energy Corp." To break their grip and share the energy with everyone, a group of agile runners, known as the "Dashers," take to the rooftops.
+In the bustling metropolitan, Energy Coins that power the city have been monopolized by the powerful "Energy Corp." To break their grip and share the energy with everyone, a group of agile runners, known as the "Dashers," take to the rooftops.
 
 ### Main Character:
 
@@ -10,15 +10,16 @@ The player controls Max, a quick and resourceful Dasher. Max believes in freedom
 
 ### Objective:
 
-The player's goal is to navigate the rooftops, avoid obstacles set by Energy Corp, collect energy coins, and pass all the levels. Collecting crystals not only boosts the score in order to pass to the next level, but also helps to power up parts of the city.
+The player's goal is to navigate the rooftops, avoid obstacles set by Energy Corp, collect Energy Coins, and pass all the levels. Collecting the coins not only boosts the score in order to pass to the next level, but also helps to power up parts of the city.
 
 ### Gameplay Mechanics:
 
 Jump from platform to platform.
-Collect a minimum of 5 energy coins to pass to the next level.
+Avoid obstacles.
+Collect a minimum of 5 Energy Coins to pass to the next level.
 
 ### How to play:
 Arrow keys or WASD - To move forward, left, right and backwards.
 SPACE while holding any of the forward, left, right or backwards buttons – To jump.
 
-Pass through all the levels by moving around and jumping from platform to platform, while dodging the obstacles set by Energy Corp. Don't forget to collect the energy coins on your way, and watch out for moving platforms! Returning the city to it's former glory is in your hands.
+Pass through all the levels by moving around and jumping from rooftops, while dodging the obstacles set by Energy Corp. Don't forget to collect the Energy Coins on your way, and watch out for moving platforms! Returning the city to it's former glory is in your hands.
