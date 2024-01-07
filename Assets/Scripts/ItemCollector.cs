@@ -15,12 +15,12 @@ public class ItemCollector : MonoBehaviour
         return coins;
     }
 
-    public void ResetCoins()
+    public void ResetCoins() //Reset number of coins
     {
         coins = 0;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other) //To count the coins and show on screen.
     {
         if (other.gameObject.CompareTag("Coin"))
         {

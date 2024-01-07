@@ -8,8 +8,9 @@ public class Finish : MonoBehaviour
 {
 
     public int requiredCoins = 5; // Set the number of coins required to finish the level
-    //private int collectedCoins = 0;
+   
     public Text collectMoreCoinsText; // Reference to the UI text element
+    public string endScreenSceneName = "End Screen";
 
     void Start()
     {
@@ -20,13 +21,14 @@ public class Finish : MonoBehaviour
     {
         if(other.gameObject.name == "Player")
         {
+        
             ItemCollector itemCollector = FindObjectOfType<ItemCollector>();
             if (itemCollector != null && itemCollector.GetCoins() >= requiredCoins)
             {
                 UnlockNewLevel();
                 Debug.Log("Player entered the finish zone.");
                 Debug.Log("Current Level Index: " + SceneManager.GetActiveScene().buildIndex);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
                 collectMoreCoinsText.gameObject.SetActive(false);
             }
             else
@@ -39,89 +41,51 @@ public class Finish : MonoBehaviour
             }
         }
     }
-    /*private void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.name == "Player")
-        {
-            if (collectedCoins >= requiredCoins)
-            {
-                UnlockNewLevel();
-                Debug.Log("Player entered the finish zone.");
-                Debug.Log("Current Level Index: " + SceneManager.GetActiveScene().buildIndex);
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            }
-            else
-            {
-                // Display a text message if the player fails to collect enough coins
-                if (collectMoreCoinsText != null)
-                {
-                    collectMoreCoinsText.text = "Collect more coins to finish the level!";
-                }
-            }
-    
-        }
-
-    }*/
-
-    /*public void CollectCoin()
-    {
-        collectedCoins++;
-    }
-
-    void UnlockNewLevel()
-    {
-        if (SceneManager.GetActiveScene().buildIndex >= PlayerPrefs.GetInt("ReachedIndex"))
-        {
-            PlayerPrefs.SetInt("ReachedIndex", SceneManager.GetActiveScene().buildIndex + 1);
-            PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
-            Debug.Log("Unlocked Levels after update: " + PlayerPrefs.GetInt("UnlockedLevel"));
-            PlayerPrefs.Save();
-            Debug.Log("New Reached Index: " + PlayerPrefs.GetInt("ReachedIndex"));
-            Debug.Log("New Unlocked Level: " + PlayerPrefs.GetInt("UnlockedLevel"));
-        }
-    }*/
 
 void UnlockNewLevel()
 {
     // Get the index of the current scene.
     int currentLevelIndex = SceneManager.GetActiveScene().buildIndex;
-    
     // Retrieve the highest level index reached by the player.
     int reachedIndex = PlayerPrefs.GetInt("ReachedIndex", 0); // Default to 0 if not set.
-
-    // Check if the current level index is greater than the reached index.
-    if (currentLevelIndex > reachedIndex)
-    {
-        // Update the reached index to the current level index.
-        PlayerPrefs.SetInt("ReachedIndex", currentLevelIndex);
-    }
-    
     // Retrieve the number of unlocked levels.
     int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1); // Default to 1 if not set.
 
-    // Update the number of unlocked levels if necessary.
-    // This assumes you want to unlock the next level only if the current level is the last unlocked level.
-    if (currentLevelIndex == unlockedLevel)
-    {
-        PlayerPrefs.SetInt("UnlockedLevel", unlockedLevel + 1);
-        Debug.Log("Unlocked Levels after update: " + (unlockedLevel + 1));
-    }
+        if (currentLevelIndex == 4)
+        {
+            // Load the end screen scene
+            SceneManager.LoadScene(endScreenSceneName);
+        }
+        else
+        {
+            // Check if the current level index is greater than the reached index.
+            if (currentLevelIndex > reachedIndex)
+            {
+                // Update the reached index to the current level index.
+                PlayerPrefs.SetInt("ReachedIndex", currentLevelIndex);
+            }
+            
+            if (currentLevelIndex == unlockedLevel)
+            {
+                PlayerPrefs.SetInt("UnlockedLevel", unlockedLevel + 1);
+                Debug.Log("Unlocked Levels after update: " + (unlockedLevel + 1));
+            }
 
-    ItemCollector itemCollector = FindObjectOfType<ItemCollector>();
-    if (itemCollector != null)
-    {
-        itemCollector.ResetCoins();
-    }
+            ItemCollector itemCollector = FindObjectOfType<ItemCollector>();
+            if (itemCollector != null)
+            {
+                itemCollector.ResetCoins();
+            }
 
-    // Save the changes to PlayerPrefs.
-    PlayerPrefs.Save();
+            // Save the changes to PlayerPrefs.
+            PlayerPrefs.Save();
 
-    // Log the new values.
-    Debug.Log("New Reached Index: " + PlayerPrefs.GetInt("ReachedIndex"));
-    Debug.Log("New Unlocked Level: " + PlayerPrefs.GetInt("UnlockedLevel"));
+            // Log the new values.
+            Debug.Log("New Reached Index: " + PlayerPrefs.GetInt("ReachedIndex"));
+            Debug.Log("New Unlocked Level: " + PlayerPrefs.GetInt("UnlockedLevel"));
 
 
-}
+    }   }
 
 }
 

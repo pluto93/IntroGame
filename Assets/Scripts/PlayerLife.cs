@@ -14,7 +14,6 @@ public class PlayerLife : MonoBehaviour
         {
             GetComponent<MeshRenderer>().enabled = false;
             GetComponent<Rigidbody>().isKinematic = true;
-            //GetComponent<PlayerMovement>().enabled = false;
             Die();
         }
     }
@@ -27,7 +26,7 @@ public class PlayerLife : MonoBehaviour
         }
     }
 
-    void Die()
+    void Die() //Death logic
     {
         Invoke(nameof(ReloadLevel), 1.3f);
         dead = true;
