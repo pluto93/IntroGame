@@ -11,6 +11,11 @@ public class Finish : MonoBehaviour
     //private int collectedCoins = 0;
     public Text collectMoreCoinsText; // Reference to the UI text element
 
+    void Start()
+    {
+        collectMoreCoinsText.gameObject.SetActive(false); // Initially hide the message
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.name == "Player")
@@ -22,13 +27,14 @@ public class Finish : MonoBehaviour
                 Debug.Log("Player entered the finish zone.");
                 Debug.Log("Current Level Index: " + SceneManager.GetActiveScene().buildIndex);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                collectMoreCoinsText.gameObject.SetActive(false);
             }
             else
             {
                 // Display a text message if the player fails to collect enough coins
                 if (collectMoreCoinsText != null)
                 {
-                    collectMoreCoinsText.text = "Collect more coins to finish the level!";
+                    collectMoreCoinsText.gameObject.SetActive(true); // Show the message
                 }
             }
         }
